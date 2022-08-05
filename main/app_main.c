@@ -52,7 +52,7 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
     int msg_id;
 
     switch ((esp_mqtt_event_id_t)event_id) {
-    case MQTT_EVENT_CONNECTED:
+case MQTT_EVENT_CONNECTED:
         ESP_LOGI(TAG, "MQTT_EVENT_CONNECTED");
 
         char * data = NULL;
@@ -100,6 +100,7 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
         
         msg_id = esp_mqtt_client_subscribe(client, "esp32/input/", 0);
         ESP_LOGI(TAG, "sent subscribe successful, msg_id=%d", msg_id);
+
         break;
     case MQTT_EVENT_DISCONNECTED:
         ESP_LOGI(TAG, "MQTT_EVENT_DISCONNECTED");
